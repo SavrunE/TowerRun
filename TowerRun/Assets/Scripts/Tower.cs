@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private Human[] humansTemplates;
     [SerializeField] private Vector2Int humanInTowerRange;
+    [SerializeField] private Human[] humansTemplates;
 
     private List<Human> humansInTower;
 
@@ -26,7 +26,7 @@ public class Tower : MonoBehaviour
 
             humansInTower.Add(Instantiate(SpawnedHuman, spawnPoint, Quaternion.identity));
 
-            humansInTower[i].transform.position = new Vector3(0, humansInTower[i].transform.localPosition.y, 0);
+            //humansInTower[i].transform.position = new Vector3(0, humansInTower[i].transform.localPosition.y, 0);
 
             spawnPoint = humansInTower[i].FixationPoint.position;
         }
