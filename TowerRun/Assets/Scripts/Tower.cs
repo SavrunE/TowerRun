@@ -6,6 +6,8 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private Vector2Int humanInTowerRange;
     [SerializeField] private Human[] humansTemplates;
+    [SerializeField] private float explosionForce;
+    [SerializeField] private float explosionRadius;
 
     private List<Human> humansInTower;
 
@@ -51,5 +53,19 @@ public class Tower : MonoBehaviour
         Vector3 distanceCheckerY = new Vector3(0, distanceChecker.position.y, 0);
         Vector3 humanFixationPointY = new Vector3(0, HumanFixationPoint.position.y, 0);
         return Vector3.Distance(distanceCheckerY, humanFixationPointY);
+    }
+
+    public void Break()
+    {
+        foreach (var human in humansTemplates)
+        {
+            if (human.TryGetComponent(out Rigidbody rigidbody))
+            {
+                rigidbody.isKinematic = false;
+                rigidbody.useGravity = true;
+
+                rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
+            }
+        }
     }
 }

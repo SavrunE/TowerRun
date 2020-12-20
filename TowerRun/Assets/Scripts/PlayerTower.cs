@@ -35,6 +35,8 @@ public class PlayerTower : MonoBehaviour
                         InsertHuman(insertHuman);
                         DisplaceCheckers(insertHuman);
                     }
+
+                    collisionTower.Break();
                 }
             }
         }
