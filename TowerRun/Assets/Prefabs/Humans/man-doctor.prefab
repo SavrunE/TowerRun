@@ -6411,7 +6411,7 @@ GameObject:
   - component: {fileID: 2615213072526028564}
   - component: {fileID: 1558764988696265076}
   - component: {fileID: 7863285748452635450}
-  - component: {fileID: 2658870028983784087}
+  - component: {fileID: -7300453572753261398}
   m_Layer: 6
   m_Name: man-doctor
   m_TagString: Untagged
@@ -6481,7 +6481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixationPoint: {fileID: 5741781630146717561}
---- !u!54 &2658870028983784087
+--- !u!54 &-7300453572753261398
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

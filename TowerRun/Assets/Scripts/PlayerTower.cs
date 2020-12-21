@@ -11,7 +11,7 @@ public class PlayerTower : MonoBehaviour
 
     private List<Human> humans;
 
-    private void Start()
+    private void Awake()
     {
         humans = new List<Human>();
         Vector3 spawnPoint = transform.position;
@@ -55,9 +55,15 @@ public class PlayerTower : MonoBehaviour
     private void DisplaceCheckers(Human human)
     {
         float displaceScale = 1.5f;
-        Vector3 distanceCheckerNewPosition = distanceChecker.transform.position;
+        Vector3 distanceCheckerNewPosition = distanceChecker.position;
         distanceCheckerNewPosition.y -= human.transform.localScale.y * displaceScale;
         distanceChecker.position = distanceCheckerNewPosition;
         checkCollider.center = distanceChecker.localPosition;
+
+        Debug.Log(displaceScale);
+        Debug.Log(distanceCheckerNewPosition);
+        Debug.Log(distanceCheckerNewPosition.y);
+        Debug.Log(distanceChecker.position);
+        Debug.Log(checkCollider.center);
     }
 }

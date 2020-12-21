@@ -7753,7 +7753,7 @@ GameObject:
   - component: {fileID: 2430924606041810111}
   - component: {fileID: 9093316866865584479}
   - component: {fileID: 4336488985947885163}
-  - component: {fileID: 3038644973076718791}
+  - component: {fileID: 6755797782279410149}
   m_Layer: 6
   m_Name: man-clown
   m_TagString: Untagged
@@ -7823,7 +7823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixationPoint: {fileID: 8278613372198653192}
---- !u!54 &3038644973076718791
+--- !u!54 &6755797782279410149
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

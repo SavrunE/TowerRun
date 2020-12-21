@@ -6901,7 +6901,7 @@ GameObject:
   - component: {fileID: 3393623506535899654}
   - component: {fileID: 3335832815494594391}
   - component: {fileID: 4973763007386763803}
-  - component: {fileID: -8914365092844802817}
+  - component: {fileID: 7700824197135194267}
   m_Layer: 6
   m_Name: man-astronaut
   m_TagString: Untagged
@@ -6971,7 +6971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixationPoint: {fileID: 7063387677164304708}
---- !u!54 &-8914365092844802817
+--- !u!54 &7700824197135194267
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

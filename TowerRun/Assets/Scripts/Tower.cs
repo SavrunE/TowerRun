@@ -48,10 +48,10 @@ public class Tower : MonoBehaviour
         }
         return null;
     }
-    private float CheckDistanceY(Transform distanceChecker, Transform HumanFixationPoint)
+    private float CheckDistanceY(Transform distanceChecker, Transform humanFixationPoint)
     {
         Vector3 distanceCheckerY = new Vector3(0, distanceChecker.position.y, 0);
-        Vector3 humanFixationPointY = new Vector3(0, HumanFixationPoint.position.y, 0);
+        Vector3 humanFixationPointY = new Vector3(0, humanFixationPoint.position.y, 0);
         return Vector3.Distance(distanceCheckerY, humanFixationPointY);
     }
 
@@ -59,13 +59,14 @@ public class Tower : MonoBehaviour
     {
         foreach (var human in humansTemplates)
         {
-            if (human.TryGetComponent(out Rigidbody rigidbody))
-            {
-                rigidbody.isKinematic = false;
-                rigidbody.useGravity = true;
+            Destroy(gameObject);
+            //if (human.TryGetComponent(out Rigidbody rigidbody))
+            //{
+            //    rigidbody.isKinematic = false;
+            //    //rigidbody.useGravity = true;
 
-                rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
-            }
+            //    rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
+            //}
         }
     }
 }

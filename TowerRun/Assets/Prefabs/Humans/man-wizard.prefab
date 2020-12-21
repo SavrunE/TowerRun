@@ -6016,7 +6016,7 @@ GameObject:
   - component: {fileID: 5048045954575658031}
   - component: {fileID: 837890802382563739}
   - component: {fileID: -1624369973671639286}
-  - component: {fileID: -2791240342585344786}
+  - component: {fileID: 3093389408512825524}
   m_Layer: 6
   m_Name: man-wizard
   m_TagString: Untagged
@@ -6086,7 +6086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixationPoint: {fileID: 1941752464800340178}
---- !u!54 &-2791240342585344786
+--- !u!54 &3093389408512825524
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
