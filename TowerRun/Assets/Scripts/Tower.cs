@@ -57,16 +57,14 @@ public class Tower : MonoBehaviour
 
     public void Break()
     {
-        foreach (var human in humansTemplates)
+        foreach (var human in humansInTower)
         {
-            Destroy(gameObject);
-            //if (human.TryGetComponent(out Rigidbody rigidbody))
-            //{
-            //    rigidbody.isKinematic = false;
-            //    //rigidbody.useGravity = true;
+            Rigidbody rigidbody = human.gameObject.AddComponent<Rigidbody>();
+            rigidbody.isKinematic = false;
+            rigidbody.useGravity = true;
 
-            //    rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
-            //}
+            rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
+
         }
     }
 }

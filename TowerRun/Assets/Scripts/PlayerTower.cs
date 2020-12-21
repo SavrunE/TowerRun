@@ -59,11 +59,5 @@ public class PlayerTower : MonoBehaviour
         distanceCheckerNewPosition.y -= human.transform.localScale.y * displaceScale;
         distanceChecker.position = distanceCheckerNewPosition;
         checkCollider.center = distanceChecker.localPosition;
-
-        Debug.Log(displaceScale);
-        Debug.Log(distanceCheckerNewPosition);
-        Debug.Log(distanceCheckerNewPosition.y);
-        Debug.Log(distanceChecker.position);
-        Debug.Log(checkCollider.center);
     }
 }
