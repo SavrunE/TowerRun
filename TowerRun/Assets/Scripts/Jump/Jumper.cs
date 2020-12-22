@@ -5,15 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Jumper : MonoBehaviour
 {
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float defaultJumpForce;
 
+    private float jumpForce;
     private bool isGround;
     private Rigidbody body;
 
     private void Start()
     {
+        jumpForce = defaultJumpForce;
         isGround = true;
-        body = GetComponent<Rigidbody>();   
+        body = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -28,6 +30,14 @@ public class Jumper : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Road road))
         {
             isGround = true;
-        }   
+        }
+    }
+    public void MultiplicationJump(float jumpMultiplication)
+    {
+        jumpForce *= jumpMultiplication;
+    }
+    public void ReturnJumpForce()
+    {
+        jumpForce = defaultJumpForce;
     }
 }

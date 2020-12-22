@@ -64,7 +64,6 @@ public class Tower : MonoBehaviour
             rigidbody.useGravity = true;
 
             rigidbody.AddExplosionForce(explosionForce, human.transform.position, explosionRadius);
-
         }
     }
 }

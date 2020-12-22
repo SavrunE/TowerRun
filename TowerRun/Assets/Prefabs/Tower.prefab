@@ -50,4 +50,4 @@ MonoBehaviour:
   - {fileID: 7863285748452635450, guid: b74f8c7c203816f418b9f708468d0ca5, type: 3}
   - {fileID: -1624369973671639286, guid: 5ae00ae816f8b854cb086d8402935c5a, type: 3}
   explosionForce: 5000
-  explosionRadius: 50
+  explosionRadius: 0
