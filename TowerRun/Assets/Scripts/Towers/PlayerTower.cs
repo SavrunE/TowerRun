@@ -9,13 +9,16 @@ public class PlayerTower : MonoBehaviour
     [SerializeField] private float fixationMaxDistance;
     [SerializeField] private BoxCollider checkCollider;
 
-    private List<Human> humans;
+    private Stack<Human> humans;
+    private float displaceScale = 1.5f;
+    private BoxCollider mainBox;
 
     private void Awake()
     {
-        humans = new List<Human>();
+        mainBox = GetComponent<BoxCollider>();
+        humans = new Stack<Human>();
         Vector3 spawnPoint = transform.position;
-        humans.Add(Instantiate(startHuman, spawnPoint, Quaternion.identity, transform));
+        humans.Push(Instantiate(startHuman, spawnPoint, Quaternion.identity, transform));
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -33,9 +36,9 @@ public class PlayerTower : MonoBehaviour
                     {
                         Human insertHuman = collectedHumans[i];
                         InsertHuman(insertHuman);
-                        DisplaceCheckers(insertHuman);
                     }
 
+                    DisplaceCheckers(humans.Count - 1);
                     collisionTower.Break();
                 }
             }
@@ -43,21 +46,29 @@ public class PlayerTower : MonoBehaviour
     }
     private void InsertHuman(Human collectedHuman)
     {
-        humans.Insert(0, collectedHuman);
         SetHumanPosition(collectedHuman);
+        humans.Push(collectedHuman);
     }
-    private void SetHumanPosition(Human human)
+    private void SetHumanPosition(Human collectedHuman)
     {
-        human.transform.parent = transform;
-        human.transform.localPosition = new Vector3(0, human.transform.localPosition.y, 0);
-        human.transform.localRotation = Quaternion.identity;
+        collectedHuman.transform.parent = transform;
+        collectedHuman.transform.position = new Vector3(humans.Peek().transform.position.x, 
+            humans.Peek().transform.position.y - displaceScale,
+            humans.Peek().transform.position.z);
+        collectedHuman.transform.localRotation = Quaternion.identity;
     }
-    private void DisplaceCheckers(Human human)
+    private void DisplaceCheckers(int towerCountCollected)
     {
-        float displaceScale = 1.5f;
-        Vector3 distanceCheckerNewPosition = distanceChecker.position;
-        distanceCheckerNewPosition.y -= human.transform.localScale.y * displaceScale;
-        distanceChecker.position = distanceCheckerNewPosition;
-        checkCollider.center = distanceChecker.localPosition;
+        distanceChecker.position = new Vector3(humans.Peek().transform.position.x,
+            humans.Peek().transform.position.y - displaceScale,
+            humans.Peek().transform.position.z);
+
+        checkCollider.center = distanceChecker.position;
+    }
+    public void OnSizeChange()
+    {
+        mainBox.transform.position = new Vector3(humans.Peek().transform.position.x,
+            humans.Peek().transform.position.y - displaceScale,
+            humans.Peek().transform.position.z);
     }
 }

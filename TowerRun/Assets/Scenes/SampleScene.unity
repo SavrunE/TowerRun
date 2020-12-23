@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHuman: {fileID: 4973763007386763803, guid: 0e95b78c5cbe06a428bc1b9c0796b8e9, type: 3}
   distanceChecker: {fileID: 1185602032}
-  fixationMaxDistance: 0.5
+  fixationMaxDistance: 0.3
   checkCollider: {fileID: 1185602031}
 --- !u!1 &705507993
 GameObject:
@@ -561,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185602030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.179, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424939193}
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 1877920040}
   - component: {fileID: 1877920039}
   - component: {fileID: 1877920044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpBooster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0379313a3dbb1246be4d2a044d027ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpMultiplication: 2.5
+  jumpMultiplication: 1.5
 --- !u!65 &1877920040
 BoxCollider:
   m_ObjectHideFlags: 0

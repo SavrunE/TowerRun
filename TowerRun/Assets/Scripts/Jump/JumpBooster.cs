@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class JumpBooster : MonoBehaviour
 {
-    [Range(2f,5f)]
+    [Range(1.5f,5f)]
     [SerializeField] private float jumpMultiplication;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out Jumper jumper))
         {
-            print("h");
             jumper.MultiplicationJump(jumpMultiplication);
         }
     }
